@@ -29,7 +29,7 @@ public class TestRunner {
 		System.setProperty("webdriver.chrome.driver", "D:\\Users\\mahendran.shanmugam\\eclipse-workspace\\collset\\chromedriver\\chromedriver.exe");
 		
 		driver = new ChromeDriver();
-		System.out.println("Bhuvana");
+		System.out.println("Bhusvana");
 		report = new ExtentReports(System.getProperty("user.dir")+"\\ExtentReportResults.html");
 		test = report.startTest("LetsKodeIt");
 		
