@@ -20,8 +20,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class gen {
 	WebDriver driver;
 Properties p;
-ExtentReports report;
-ExtentTest test;
+
 	gen(WebDriver driver)
 	
 	{

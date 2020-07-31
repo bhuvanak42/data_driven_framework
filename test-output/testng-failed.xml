@@ -7,6 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="click_OpenTab"/>
+          <include name="click_practice"/>
           <include name="lauchApplication"/>
         </methods>
       </class> <!-- funcdef.TestRunner -->

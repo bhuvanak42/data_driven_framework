@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-30T13:31:03Z" name="Default suite" finished-at="2020-07-30T13:31:09Z" duration-ms="6393">
+  <suite started-at="2020-07-31T08:19:15Z" name="Default suite" finished-at="2020-07-31T08:19:38Z" duration-ms="23040">
     <groups>
     </groups>
-    <test started-at="2020-07-30T13:31:03Z" name="Default test" finished-at="2020-07-30T13:31:09Z" duration-ms="6393">
+    <test started-at="2020-07-31T08:19:15Z" name="Default test" finished-at="2020-07-31T08:19:38Z" duration-ms="23040">
       <class name="funcdef.TestRunner">
-        <test-method is-config="true" signature="lauchApplication()[pri:0, instance:funcdef.TestRunner@c0c2f8d]" started-at="2020-07-30T13:30:54Z" name="lauchApplication" finished-at="2020-07-30T13:31:03Z" duration-ms="9107" status="PASS">
+        <test-method is-config="true" signature="lauchApplication()[pri:0, instance:funcdef.TestRunner@16eb3ea3]" started-at="2020-07-31T08:19:03Z" name="lauchApplication" finished-at="2020-07-31T08:19:15Z" duration-ms="11957" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- lauchApplication -->
-        <test-method signature="click_practice()[pri:0, instance:funcdef.TestRunner@c0c2f8d]" started-at="2020-07-30T13:31:03Z" name="click_practice" finished-at="2020-07-30T13:31:03Z" duration-ms="125" status="PASS">
+        <test-method signature="click_practice()[pri:0, instance:funcdef.TestRunner@16eb3ea3]" started-at="2020-07-31T08:19:15Z" name="click_practice" finished-at="2020-07-31T08:19:32Z" duration-ms="16821" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- click_practice -->
-        <test-method signature="click_OpenTab()[pri:1, instance:funcdef.TestRunner@c0c2f8d]" started-at="2020-07-30T13:31:03Z" name="click_OpenTab" finished-at="2020-07-30T13:31:09Z" duration-ms="6247" status="PASS">
+        <test-method signature="click_OpenTab()[pri:1, instance:funcdef.TestRunner@16eb3ea3]" started-at="2020-07-31T08:19:32Z" name="click_OpenTab" finished-at="2020-07-31T08:19:38Z" duration-ms="6199" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- click_OpenTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:funcdef.TestRunner@c0c2f8d]" started-at="2020-07-30T13:31:09Z" name="tearDown" finished-at="2020-07-30T13:31:10Z" duration-ms="1073" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:funcdef.TestRunner@16eb3ea3]" started-at="2020-07-31T08:19:38Z" name="tearDown" finished-at="2020-07-31T08:19:39Z" duration-ms="865" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

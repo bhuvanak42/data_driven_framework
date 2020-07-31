@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -17,11 +18,10 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class TestRunner {
-
+public class TestRunner  extends Utility
+{
 	WebDriver driver;
-	ExtentReports report;
-	ExtentTest test;
+
 	
 @BeforeSuite
 	public void lauchApplication() throws IOException
@@ -31,7 +31,6 @@ public class TestRunner {
 		driver = new ChromeDriver();
 		System.out.println("Bhuvana");
 		
-		report = new ExtentReports(System.getProperty("user.dir")+"\\ExtentReportResults.html");
 		test = report.startTest("LetsKodeIt");
 		
 		
@@ -48,7 +47,11 @@ public class TestRunner {
 		public void click_practice() throws IOException, InterruptedException
 		{
 			
-			Practice p=new Practice(driver);
+			p=new Practice(driver);
+			
+			
+			
+			Thread.sleep(3000);
 			try
 			{
 			p.clickPracticeButton();
@@ -59,6 +62,12 @@ public class TestRunner {
 			{
 				test.log(LogStatus.FAIL, "Practice button not clicked");
 			}
+			
+			p.mouse_hover();
+			
+			
+			
+			driver.findElement(By.xpath("//div[@class='mouse-hover-content']//a[text()='Reload']")).click();
 		}
 		   // p.verify_practicePageLoad();
 			
@@ -67,10 +76,10 @@ public class TestRunner {
 		@Test(priority =1)
 		public void click_OpenTab() throws IOException, InterruptedException
 		{
-			Practice p=new Practice(driver);
+			c=new courses(driver);
 			try
 			{
-			p.clickOpenTab();
+			c.clickOpenTab();
 			test.log(LogStatus.PASS, "Open tab button  clicked");			
 			}
 			catch(Exception e)
@@ -78,7 +87,7 @@ public class TestRunner {
 				test.log(LogStatus.FAIL, "Open tab button not clicked");
 			}
 			
-			p.courseCount();
+			c.courseCount();
 		}
 		
 		

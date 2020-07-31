@@ -7,9 +7,13 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,7 +27,7 @@ public class Practice{
 
 	gen g;
 	
-	
+	Logger logger;
 		
 	String Pwindow;
 	String childWindow;
@@ -32,6 +36,10 @@ Practice(WebDriver driver)
 this.driver= driver;
 
 }
+
+
+
+
 	
 
 
@@ -40,9 +48,8 @@ this.driver= driver;
 	public void clickPracticeButton() throws IOException, InterruptedException
 	{
 		
-		//report = new ExtentReports(System.getProperty("user.dir")+"\\ExtentReportResults.html");
-		//test = report.startTest("LetsKodeIt");
-		
+	
+		Logger logger = LogManager.getLogger(Practice.class);
 		
 		gen g= new gen(driver);
 		
@@ -50,8 +57,33 @@ this.driver= driver;
 g.findElement("practice","xpath").click();
 		
 	
-//test.log(LogStatus.PASS,"Practice page navigated successfully from Pratice page");
+
 	
+	}
+	
+	
+	public void mouse_hover() throws IOException, InterruptedException
+	{
+		
+		//WebElement f= g.findElement("mousehover", "xpath");
+		
+		Thread.sleep(5000);
+
+		  JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("window.scrollBy(0,1000)");
+		    
+		    Thread.sleep(3000);
+		
+		WebElement f = driver.findElement(By.id("mousehover"));
+		    
+		    //WebElement f=  g.findElement("mousehover", "id");
+		
+				Actions action = new Actions(driver);
+	
+		action.moveToElement(f).perform();
+		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath("//div[@class='mouse-hover-content']//a[text()='Reload']")).click();
 	}
 	
 	public void verify_practicePageLoad() throws IOException
@@ -68,6 +100,8 @@ g.findElement("practice","xpath").click();
    		 	
    		System.out.println("Practice URL verified");
    		//test.log(LogStatus.PASS,"Practice URL matched");
+   		
+   		logger.info("Expected URL matched");
    	}
    	else
    	{
@@ -79,64 +113,8 @@ g.findElement("practice","xpath").click();
 	}
 	
 	
-	public void clickOpenTab() throws IOException, InterruptedException
-	{
-		
-		gen g= new gen(driver);
-	Thread.sleep(4000);
-		Pwindow= driver.getWindowHandle();
-		 System.out.println("Pwindow"+Pwindow);
-		g.findElement("OpenTab","id").click();
-		
-	}
 	
-	public void courseCount()
-	{
-		Set<String> windows = driver.getWindowHandles();
-		System.out.println(windows);
-		
-		Iterator<String> itr = windows.iterator();
-		
-		
-		while(itr.hasNext())
-		{
-			String childWindow = itr.next();
-			if(!childWindow.equals(Pwindow))
-			{
-				driver.switchTo().window(childWindow);
-				System.out.println("childWindow"+childWindow);
-			break;
-			}//if 
-			}//while
 	
-		List<WebElement> count= 	driver.findElements(By.xpath("//div[@class='course-listing-title']"));
-		int i;
-		for(i=0;i<1;i++)
-		{
-		switch(i)
-		{
-		case 0:
-		{
-			if(count.get(i).getText().equals("Selenium WebDriver With Java"))
-			{
-				System.out.println("pass");
-				//test.log(LogStatus.PASS,"Content matched");
-				
-			}
-			else
-			{
-				System.out.println("Fail");
-				
-				//test.log(LogStatus.PASS,"Content not matched");
-		
-			}
-		}
-		}
-			
-			}//for loop
-	
-		
-	} //function
 	
 	}// class
 	
